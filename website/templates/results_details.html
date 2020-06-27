@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-8">
+
+			<table>
+
+			    <tr>
+			        <td>Word</td>
+			        <td>{{ word_details.full_word }}</td>
+			    </tr>
+
+			   	<tr>
+			        <td>Speech part</td>
+			        <td>{{ word_details.speech_part }}</td>
+			    </tr>
+
+			   	<tr>
+			        <td>Definitions</td>
+			    </tr>
+
+			   	<tr>
+			        <td>English</td>
+			        <td>German</td>
+			    </tr>
+
+			    {% for pairs in word_details.details.definitions_translations %}
+
+			   	<tr>
+
+			   		<td>{{ pairs.translation }}</td>
+			   		<td>{{ pairs.definition }}</td>
+
+			    </tr>
+
+				{% endfor %}	
+
+				{% if word_details.speech_part == 'noun' %}
+
+				<tr>
+
+			   		<td>Declension</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Singular</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Nominativ</td>
+			   		<td>{{ word_details.details.declension.singular.nominativ }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Genitiv</td>
+			   		<td>{{ word_details.details.declension.singular.genitiv }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Dativ</td>
+			   		<td>{{ word_details.details.declension.singular.dativ }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Akkusativ</td>
+			   		<td>{{ word_details.details.declension.singular.akkusativ }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Plural</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Nominativ</td>
+			   		<td>{{ word_details.details.declension.plural.nominativ }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Genitiv</td>
+			   		<td>{{ word_details.details.declension.plural.genitiv }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Dativ</td>
+			   		<td>{{ word_details.details.declension.plural.dativ }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Akkusativ</td>
+			   		<td>{{ word_details.details.declension.plural.akkusativ }}</td>
+
+			    </tr>
+
+			    {% elif word_details.speech_part == 'verb' %}
+
+			    <tr>
+
+			   		<td>Conjugation</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Present tense</td>
+
+			    </tr>
+
+			    <tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.present.ich }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>du</td>
+			   		<td>{{ word_details.details.conjugation.present.du }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.present.ersiees }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>wir</td>
+			   		<td>{{ word_details.details.conjugation.present.wir }}</td>
+
+			    </tr>
+
+			    	   	<tr>
+
+			   		<td>ihr</td>
+			   		<td>{{ word_details.details.conjugation.present.ihr }}</td>
+
+			    </tr>
+
+			    <tr>
+
+			   		<td>sie</td>
+			   		<td>{{ word_details.details.conjugation.present.sie }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>Imperfect tense</td>
+
+			    </tr>
+
+			    <tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.ich }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>du</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.du }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.ersiees }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>wir</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.wir }}</td>
+
+			    </tr>
+
+			    	   	<tr>
+
+			   		<td>ihr</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.ihr }}</td>
+
+			    </tr>
+
+			    	   	<tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.imperfect.sie }}</td>
+
+			    </tr>
+
+			    <tr>
+
+			   		<td>Perfect tense</td>
+
+			    </tr>
+
+			    <tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.perfect.ich }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>du</td>
+			   		<td>{{ word_details.details.conjugation.perfect.du }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.perfect.ersiees }}</td>
+
+			    </tr>
+
+			   	<tr>
+
+			   		<td>wir</td>
+			   		<td>{{ word_details.details.conjugation.perfect.wir }}</td>
+
+			    </tr>
+
+			    	   	<tr>
+
+			   		<td>ihr</td>
+			   		<td>{{ word_details.details.conjugation.perfect.ihr }}</td>
+
+			    </tr>
+
+			    	   	<tr>
+
+			   		<td>ich</td>
+			   		<td>{{ word_details.details.conjugation.perfect.sie }}</td>
+
+			    </tr>
+
+				{% endif %}
+
+			</table>
+
+        </div>
+    
+    </div>
+
+</div>
+
+{% endblock %}

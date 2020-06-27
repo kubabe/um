@@ -1,0 +1,13 @@
+*.ipynb
+.ipynb_checkpoints
+
+.DS_Store
+.python-version
+
+*.pyc
+__pycache__
+
+db.sqlite3
+/static
+
+*~
