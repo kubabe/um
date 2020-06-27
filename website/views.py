@@ -31,8 +31,6 @@ def search(request):
 
 		results = combine_words(text = url_word)
 
-		print(results)
-
 		if len(results) == 0:
 
 			return HttpResponse('Nothing matches the search term. Try again :-)')
@@ -72,8 +70,6 @@ def details(request):
 	url_word_id = request.GET['word_id']
 
 	response = get_total(word_id = url_word_id)
-
-	print(response)
 
 	return render(request, 'results_details.html', {'word_details': response})
 
